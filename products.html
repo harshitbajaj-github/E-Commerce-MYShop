@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products | MyShop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    .flex-grow-1 { flex-grow: 1; }
+
+    /* Footer Styling */
+    footer {
+      background-color: #212529;
+      color: #ccc;
+    }
+    footer a { color: #ccc; text-decoration: none; transition: 0.3s; }
+    footer a:hover { color: #fff; transform: translateX(5px); }
+    .social-icons a { color: #fff; font-size: 22px; margin-right: 15px; transition: 0.3s; }
+    .social-icons a:hover { color: #0d6efd; transform: scale(1.2); }
+
+    .product-card img {
+      height: 200px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary px-3">
+  <a class="navbar-brand" href="index.html">🛒 MyShop</a>
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+    </ul>
+
+     <div class="d-flex">
+      <button class="btn btn-light me-2" onclick="toggleTheme()">🌙</button> 
+      
+    </div>
+  
+
+    <a href="cart.html" class="btn btn-warning">
+      🛒 Cart (<span id="count">0</span>)
+    </a>
+  </div>
+</nav>
+<!-- ================= NAVBAR END ================= -->
+
+
+<!-- ================= PAGE CONTENT ================= -->
+<div class="container mt-4 flex-grow-1">
+
+  <h2 class="text-center mb-4">Our Products</h2>
+
+  <div class="row">
+
+    <!-- Product 1 -->
+    <div class="col-md-4 mb-4">
+      <div class="card product-card p-3 text-center">
+        <img src="images/Mobile.jpg" class="card-img-top mb-3" alt="Mobile">
+        <h5>Mobile</h5>
+        <p>₹12,999</p>
+       <button class="btn btn-primary"
+         onclick="addToCart('Mobile',12999,'images/Mobile.jpg')">
+          Add to Cart
+       </button>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="col-md-4 mb-4">
+      <div class="card product-card p-3 text-center">
+        <img src="images/laptop.jpg" class="card-img-top mb-3" alt="Laptop">
+        <h5>Laptop</h5>
+        <p>₹45,999</p>
+        <button class="btn btn-primary" onclick="addToCart('Laptop',45999,'images/laptop.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="col-md-4 mb-4">
+      <div class="card product-card p-3 text-center">
+        <img src="images/headphone.jpg" class="card-img-top mb-3" alt="Headphones">
+        <h5>Headphones</h5>
+        <p>₹3,999</p>
+        <button class="btn btn-primary" onclick="addToCart('Headphones',3999,'images/headphone.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="col-md-4 mb-4">
+      <div class="card product-card p-3 text-center">
+        <img src="images/smart-watch.jpg" class="card-img-top mb-3" alt="Smartwatch">
+        <h5>Smartwatch</h5>
+        <p>₹8,499</p>
+        <button class="btn btn-primary" onclick="addToCart('Smartwatch',8499,'images/smart-watch.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="col-md-4 mb-4">
+      <div class="card product-card p-3 text-center">
+        <img src="images/camera.jpg" class="card-img-top mb-3" alt="Camera">
+        <h5>Camera</h5>
+
+        <p>₹25,999</p>
+        <button class="btn btn-primary" onclick="addToCart('Camera',25999,'images/camera.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="col-md-4 mb-4">
+      <div class="card product-card p-3 text-center">
+        <img src="images/tablet.jpg" class="card-img-top mb-3" alt="Tablet">
+        <h5>Tablet</h5>
+        <p>₹15,499</p>
+        <button class="btn btn-primary" onclick="addToCart('Tablet',15499,'images/tablet.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="col-md-4 mb-4">
+      <div class="card product-card p-3 text-center">
+        <img src="images/Smart-TV.jpg" class="card-img-top mb-3" alt="Mobile">
+        <h5>Smart TV</h5>
+        <p>₹30,000</p>
+        <button class="btn btn-primary" onclick="addToCart('Mobile',12999,'images/Smart-TV.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="col-md-4 mb-4">
+      <div class="card product-card p-3 text-center">
+        <img src="images/Gaming-console.jpg" class="card-img-top mb-3" alt="Laptop">
+        <h5>Gaming Console</h5>
+        <p>₹50,000</p>
+        <button class="btn btn-primary" onclick="addToCart('Laptop',45999,'images/Gaming-console.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Product 9 -->
+    <div class="col-md-4 mb-4">
+      <div class="card product-card p-3 text-center">
+        <img src="images/Airpods.jpg" class="card-img-top mb-3" alt="Headphones">
+        <h5>AirPods</h5>
+        <p>₹5,000</p>
+        <button class="btn btn-primary" onclick="addToCart('Headphones',3999,'images/Airpods.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Product 10 -->
+    <div class="col-md-4 mb-4">
+      <div class="card product-card p-3 text-center">
+        <img src="images/portable-speaker.jpg" class="card-img-top mb-3" alt="Smartwatch">
+        <h5>Portable Speaker</h5>
+        <p>₹2,000</p>
+        <button class="btn btn-primary" onclick="addToCart('Smartwatch',8499,'images/portable-speaker.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Product 11 -->
+    <div class="col-md-4 mb-4">
+      <div class="card product-card p-3 text-center">
+        <img src="images/Drone.jpg" class="card-img-top mb-3" alt="Camera">
+        <h5>Drone</h5>
+
+        <p>₹25,000</p>
+        <button class="btn btn-primary" onclick="addToCart('Camera',25999,'images/Drone.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Product 12 -->
+    <div class="col-md-4 mb-4">
+      <div class="card product-card p-3 text-center">
+        <img src="images/power-bank.jpg" class="card-img-top mb-3" alt="Tablet">
+        <h5>Power Bank</h5>
+        <p>₹1,000</p>
+        <button class="btn btn-primary" onclick="addToCart('Tablet',15499,'images/power-bank.jpg')">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<!-- ================= PAGE CONTENT END ================= -->
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="mt-auto">
+  <div class="container py-5">
+    <div class="row">
+
+      <div class="col-md-4 mb-3">
+        <h5>🛒 MyShop</h5>
+        <p class="small text-secondary">Professional multi-page e-commerce website for learning and portfolio purposes.</p>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <h5>Connect With Me</h5>
+        <div class="social-icons mb-3">
+          <a href="https://github.com/harshitbajaj-github"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/harshit-bajaj-4543482a5/"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.instagram.com/harshit.bajaj.7547/#"><i class="bi bi-instagram"></i></a>
+        </div>
+        <p class="small mb-0">📧 bajajharshit74@gmail.com</p>
+        <p class="small mb-0">📍 India</p>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary">
+    <div class="text-center small text-secondary">
+      © 2026 MyShop | Designed & Developed by Harshit Bajaj
+    </div>
+
+  </div>
+</footer>
+<!-- ================= FOOTER END ================= -->
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/cart.js"></script>
+
+<!-- Dark Mode Script -->
+<script src="js/theme.js"></script>
+
+</body>
+</html>
